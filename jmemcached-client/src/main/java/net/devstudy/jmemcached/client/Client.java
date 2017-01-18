@@ -19,5 +19,5 @@ public interface Client extends AutoCloseable {
 
     Status remove(String key) throws IOException;
 
-    Status clear() throws  IOException;
+    Status clear() throws IOException;
 }

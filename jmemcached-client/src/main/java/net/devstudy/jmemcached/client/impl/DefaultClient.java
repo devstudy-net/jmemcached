@@ -81,7 +81,7 @@ class DefaultClient implements Client {
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() throws IOException {
         this.socket.close();
     }
 }

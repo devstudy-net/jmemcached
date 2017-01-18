@@ -23,7 +23,7 @@ class DefaultClientConfig implements ClientConfig {
         this.host = host;
         this.port = port;
         this.requestConverter = new DefaultRequestConverter();
-        this.responseConverter=new DefaultResponseConverter();
+        this.responseConverter = new DefaultResponseConverter();
         this.objectSerializer = new DefaultObjectSerializer();
     }
 

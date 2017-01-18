@@ -39,15 +39,19 @@ public class ExternalProject {
      */
     private static class BusinessObject implements Serializable {
         private String name;
+
         BusinessObject(String name) {
             this.name = name;
         }
+
         public String getName() {
             return name;
         }
+
         public void setName(String name) {
             this.name = name;
         }
+
         @Override
         public String toString() {
             final StringBuilder sb = new StringBuilder("BusinessObject{");
