@@ -47,11 +47,11 @@ public class Request extends AbstractPackage {
         this.ttl = ttl;
     }
 
-    public boolean hasKey(){
+    public boolean hasKey() {
         return key != null;
     }
 
-    public boolean hasTtl(){
+    public boolean hasTtl() {
         return ttl != null;
     }
 

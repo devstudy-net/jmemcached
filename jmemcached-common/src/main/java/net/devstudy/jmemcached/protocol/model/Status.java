@@ -20,13 +20,14 @@ public enum Status {
     CLEARED(5);
 
     private byte code;
+
     Status(int code) {
-        this.code = (byte)code;
+        this.code = (byte) code;
     }
 
     public static Status valueOf(byte byteCode) {
-        for(Status instance : Status.values()) {
-            if(instance.getByteCode() == byteCode) {
+        for (Status instance : Status.values()) {
+            if (instance.getByteCode() == byteCode) {
                 return instance;
             }
         }

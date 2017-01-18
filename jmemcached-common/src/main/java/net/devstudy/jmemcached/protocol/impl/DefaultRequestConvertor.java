@@ -22,21 +22,21 @@ public class DefaultRequestConvertor extends AbstractPackageConverter implements
         byte flags = dataInputStream.readByte();
         boolean hasKey = (flags & 1) != 0;
         boolean hasTTL = (flags & 2) != 0;
-        boolean hasData= (flags & 4) != 0;
+        boolean hasData = (flags & 4) != 0;
         return readRequest(cmd, hasKey, hasTTL, hasData, dataInputStream);
     }
 
     protected Request readRequest(byte cmd, boolean hasKey, boolean hasTTL, boolean hasData, DataInputStream dataInputStream) throws IOException {
         Request request = new Request(Command.valueOf(cmd));
-        if(hasKey) {
+        if (hasKey) {
             byte keyLength = dataInputStream.readByte();
             byte[] keyBytes = IOUtils.readFully(dataInputStream, keyLength);
             request.setKey(new String(keyBytes, StandardCharsets.US_ASCII));
         }
-        if(hasTTL) {
+        if (hasTTL) {
             request.setTtl(dataInputStream.readLong());
         }
-        if(hasData) {
+        if (hasData) {
             int dataLength = dataInputStream.readInt();
             request.setData(IOUtils.readFully(dataInputStream, dataLength));
         }
@@ -49,13 +49,13 @@ public class DefaultRequestConvertor extends AbstractPackageConverter implements
         dataOutputStream.writeByte(getVersionByte());
         dataOutputStream.writeByte(request.getCommand().getByteCode());
         dataOutputStream.writeByte(getFlagsByte(request));
-        if(request.hasKey()) {
+        if (request.hasKey()) {
             writeKey(dataOutputStream, request);
         }
-        if(request.hasTtl()) {
+        if (request.hasTtl()) {
             dataOutputStream.writeLong(request.getTtl());
         }
-        if(request.hasData()) {
+        if (request.hasData()) {
             dataOutputStream.writeInt(request.getData().length);
             dataOutputStream.write(request.getData());
         }
@@ -64,13 +64,13 @@ public class DefaultRequestConvertor extends AbstractPackageConverter implements
 
     protected byte getFlagsByte(Request request) {
         byte flags = 0;
-        if(request.hasKey()) {
+        if (request.hasKey()) {
             flags |= 1;
         }
-        if(request.hasTtl()) {
+        if (request.hasTtl()) {
             flags |= 2;
         }
-        if(request.hasData()) {
+        if (request.hasData()) {
             flags |= 4;
         }
         return flags;
@@ -78,8 +78,8 @@ public class DefaultRequestConvertor extends AbstractPackageConverter implements
 
     protected void writeKey(DataOutputStream dataOutputStream, Request request) throws IOException {
         byte[] key = request.getKey().getBytes(StandardCharsets.US_ASCII);
-        if(key.length > 127) {
-            throw new JMemcachedException("Key length should be <= 127 bytes for key="+request.getKey());
+        if (key.length > 127) {
+            throw new JMemcachedException("Key length should be <= 127 bytes for key=" + request.getKey());
         }
         dataOutputStream.writeByte(key.length);
         dataOutputStream.write(key);

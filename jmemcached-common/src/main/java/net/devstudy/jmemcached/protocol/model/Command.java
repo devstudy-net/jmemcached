@@ -18,19 +18,19 @@ public enum Command {
     private byte code;
 
     Command(int code) {
-        this.code = (byte)code;
+        this.code = (byte) code;
     }
 
     public static Command valueOf(byte byteCode) {
         for (Command command : Command.values()) {
-            if(command.getByteCode() == byteCode) {
+            if (command.getByteCode() == byteCode) {
                 return command;
             }
         }
-        throw new JMemcachedException("Unsupported byteCode for Command: "+byteCode);
+        throw new JMemcachedException("Unsupported byteCode for Command: " + byteCode);
     }
 
-    public byte getByteCode(){
+    public byte getByteCode() {
         return code;
     }
 }
