@@ -3,7 +3,8 @@ package net.devstudy.jmemcached.protocol.model;
 import net.devstudy.jmemcached.exception.JMemcachedException;
 
 /**
- * Created by devstudy on 1/18/2017.
+ * @author devstudy
+ * @see http://devstudy.net
  */
 public enum Version {
 

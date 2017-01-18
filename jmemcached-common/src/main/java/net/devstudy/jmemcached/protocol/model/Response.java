@@ -1,7 +1,8 @@
 package net.devstudy.jmemcached.protocol.model;
 
 /**
- * Created by devstudy on 1/18/2017.
+ * @author devstudy
+ * @see http://devstudy.net
  */
 public class Response extends AbstractPackage {
     private final Status status;
@@ -13,5 +14,9 @@ public class Response extends AbstractPackage {
 
     public Response(Status status) {
         this.status = status;
+    }
+
+    public Status getStatus() {
+        return status;
     }
 }

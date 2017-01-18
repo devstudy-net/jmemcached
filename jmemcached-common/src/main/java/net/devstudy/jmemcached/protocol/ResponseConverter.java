@@ -7,7 +7,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 /**
- * Created by devstudy on 1/18/2017.
+ * @author devstudy
+ * @see http://devstudy.net
  */
 public interface ResponseConverter {
 

@@ -1,7 +1,8 @@
 package net.devstudy.jmemcached.protocol;
 
 /**
- * Created by devstudy on 1/18/2017.
+ * @author devstudy
+ * @see http://devstudy.net
  */
 public interface ObjectSerializer {
 

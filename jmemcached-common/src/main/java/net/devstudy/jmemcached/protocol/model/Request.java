@@ -3,7 +3,8 @@ package net.devstudy.jmemcached.protocol.model;
 import java.util.Date;
 
 /**
- * Created by devstudy on 1/18/2017.
+ * @author devstudy
+ * @see http://devstudy.net
  */
 public class Request extends AbstractPackage {
     private final Command command;
