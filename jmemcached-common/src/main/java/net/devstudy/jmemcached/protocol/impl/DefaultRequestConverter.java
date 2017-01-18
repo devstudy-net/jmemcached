@@ -1,7 +1,7 @@
 package net.devstudy.jmemcached.protocol.impl;
 
 import net.devstudy.jmemcached.exception.JMemcachedException;
-import net.devstudy.jmemcached.protocol.RequestConvertor;
+import net.devstudy.jmemcached.protocol.RequestConverter;
 import net.devstudy.jmemcached.protocol.model.Command;
 import net.devstudy.jmemcached.protocol.model.Request;
 import org.apache.commons.io.IOUtils;
@@ -13,7 +13,7 @@ import java.nio.charset.StandardCharsets;
  * @author devstudy
  * @see http://devstudy.net
  */
-public class DefaultRequestConvertor extends AbstractPackageConverter implements RequestConvertor {
+public class DefaultRequestConverter extends AbstractPackageConverter implements RequestConverter {
     @Override
     public Request readRequest(InputStream inputStream) throws IOException {
         DataInputStream dataInputStream = new DataInputStream(inputStream);

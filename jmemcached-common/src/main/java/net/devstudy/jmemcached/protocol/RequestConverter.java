@@ -10,7 +10,7 @@ import java.io.OutputStream;
  * @author devstudy
  * @see http://devstudy.net
  */
-public interface RequestConvertor {
+public interface RequestConverter {
 
     Request readRequest(InputStream inputStream) throws IOException;
 
