@@ -51,6 +51,7 @@ class DefaultClientSocketHandler implements ClientSocketHandler {
                     LOGGER.debug("Command {} -> {}", request, response);
                 } catch (RuntimeException e) {
                     LOGGER.error("Handle request failed: " + e.getMessage(), e);
+                    break;
                 }
             }
         } catch (EOFException | SocketException e) {
