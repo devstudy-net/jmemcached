@@ -20,7 +20,7 @@ public interface ServerConfig extends AutoCloseable {
 
     CommandHandler getCommandHandler();
 
-    ThreadFactory getWorkerThreadFactor();
+    ThreadFactory getWorkerThreadFactory();
 
     int getClearDataIntervalInMs();
 

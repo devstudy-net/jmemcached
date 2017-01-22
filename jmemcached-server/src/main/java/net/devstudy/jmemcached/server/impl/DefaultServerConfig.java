@@ -51,7 +51,7 @@ class DefaultServerConfig implements ServerConfig {
     }
 
     protected CommandHandler createCommandHandler() {
-        return new DefaultCommandHandler(storage);
+        return new DefaultCommandHandler(this);
     }
 
     protected InputStream getClassParhResourceInputStream(String classPathResource) {
@@ -91,7 +91,7 @@ class DefaultServerConfig implements ServerConfig {
     }
 
     @Override
-    public ThreadFactory getWorkerThreadFactor() {
+    public ThreadFactory getWorkerThreadFactory() {
         return new ThreadFactory() {
             private int threadCount = 0;
 

@@ -6,6 +6,7 @@ import net.devstudy.jmemcached.protocol.model.Request;
 import net.devstudy.jmemcached.protocol.model.Response;
 import net.devstudy.jmemcached.protocol.model.Status;
 import net.devstudy.jmemcached.server.CommandHandler;
+import net.devstudy.jmemcached.server.ServerConfig;
 import net.devstudy.jmemcached.server.Storage;
 
 /**
@@ -16,8 +17,8 @@ class DefaultCommandHandler implements CommandHandler {
 
     private final Storage storage;
 
-    DefaultCommandHandler(Storage storage) {
-        this.storage = storage;
+    DefaultCommandHandler(ServerConfig serverConfig) {
+        this.storage = serverConfig.getStorage();
     }
 
     @Override

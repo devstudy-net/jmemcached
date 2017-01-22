@@ -41,7 +41,7 @@ class DefaultServer implements Server {
     }
 
     protected ExecutorService createExecutorService(){
-        ThreadFactory threadFactory = serverConfig.getWorkerThreadFactor();
+        ThreadFactory threadFactory = serverConfig.getWorkerThreadFactory();
         int initThreadCount = serverConfig.getInitThreadCount();
         int maxThreadCount = serverConfig.getMaxThreadCount();
         return new ThreadPoolExecutor(initThreadCount, maxThreadCount,
@@ -117,7 +117,7 @@ class DefaultServer implements Server {
 
     @Override
     public void stop() {
-        LOGGER.info("detected stop cmd");
+        LOGGER.info("Detected stop cmd");
         mainServerThread.interrupt();
         try {
             serverSocket.close();
