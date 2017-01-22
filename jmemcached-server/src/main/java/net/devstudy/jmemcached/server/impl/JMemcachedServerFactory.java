@@ -11,6 +11,6 @@ import java.util.Properties;
 public class JMemcachedServerFactory {
 
     public static Server buildNewServer(Properties overrideApplicationProperties) {
-        return null;
+        return new DefaultServer(new DefaultServerConfig(overrideApplicationProperties));
     }
 }
